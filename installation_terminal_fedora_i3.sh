@@ -36,3 +36,4 @@ echo "exec compton" > ~/.config/i3/config
 
 # Add background image
 echo "exec --no-startup-id feh --bg-fill ~/Pictures/wallpapers/wallpapers.jpeg" > ~/.config/i3/config
+# alacritty change font (put it in i3): alacritty -o font.size=12
