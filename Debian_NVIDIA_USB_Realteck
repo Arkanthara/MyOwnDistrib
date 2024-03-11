@@ -1,0 +1,6 @@
+# Install sudo
+apt install sudo
+usermod -aG sudo $USER
+
+# Install NVIDIA driver
+sudo apt install build-essential 
