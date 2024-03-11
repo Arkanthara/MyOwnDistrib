@@ -3,4 +3,34 @@ apt install sudo
 usermod -aG sudo $USER
 
 # Install NVIDIA driver
-sudo apt install build-essential 
+sudo apt install build-essential linux-headers-amd64 xorg libvulkan1
+
+sudo ./NVIDIA_DRIVER.run
+
+# Install i3
+sudo apt install i3
+
+# Install terminator
+sudo apt install terminator
+
+# Install USB wireless
+git clone https://github.com/morrownr/88x2bu-20210702.git
+
+sudo sh install-driver.sh
+
+# Add config wpa_supplicant
+wpa_passphrase "ESSID" Password | sudo tee -a /etc/wpa_supplicant/wpa_supplicant.conf
+
+# Adding the line priority=1 in network {} give higher priority to a network
+# Add the line below to /etc/network/interfaces:
+# The primary network interface
+# allow-hotplug wlx1cbfcef207ea # This is the name of the network interface
+# iface wlx1cbfcef207ea inet dhcp
+# 	wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
+# Install firefox
+sudo apt install firefox-esr
+
+# Install CUDA
+
+# Install OptiX
