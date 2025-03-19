@@ -9,3 +9,9 @@ vim.opt.foldlevel = 1
 vim.opt.foldnestmax = 1
 
 -- To get level of line, use :echo foldlevel(num line)
+
+-- Set indentation options
+vim.opt.tabstop = 4 -- Number of spaces that a <Tab> counts for
+vim.opt.shiftwidth = 4 -- Number of spaces to use for each step of (auto)indent
+vim.opt.expandtab = true -- Use spaces instead of tabs
+vim.opt.smarttab = true -- Enable smart tabbing

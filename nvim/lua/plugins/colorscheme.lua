@@ -4,7 +4,7 @@ return {
     lazy = true,
     name = "catppuccin",
     opts = {
-      transparent_background = true,
+      transparent_background = false,
       integrations = {
         aerial = true,
         alpha = true,
@@ -71,5 +71,54 @@ return {
     opts = {
       colorscheme = "catppuccin-macchiato",
     },
-  }
+  },
+  {
+    "tribela/transparent.nvim",
+    event = "VimEnter",
+    config = function()
+      require("transparent").setup({
+        enable = true, -- Enables the transparency
+        extra_groups = { -- Makes all groups transparent
+          "Normal",
+          "NormalNC",
+          "VertSplit",
+          "StatusLine",
+          "StatusLineNC",
+          "TabLine",
+          "TabLineFill",
+          "TabLineSel",
+          "EndOfBuffer",
+          "BufferLine*",
+          "Pmenu",
+          "PmenuSel",
+          "PmenuSbar",
+          "PmenuThumb",
+          "CursorLine",
+          "CursorColumn",
+          "WildMenu",
+          "MatchParen",
+          "Search",
+          "IncSearch",
+          "Comment",
+          "CursorLineNr",
+          "LineNr",
+          "SignColumn",
+          "Health*",
+          "DiffAdd",
+          "DiffChange",
+          "DiffDelete",
+          "DiffText",
+          "ErrorMsg",
+          "WarningMsg",
+          "Question",
+          "MoreMsg",
+          "SpellBad",
+          "SpellCap",
+          "SpellLocal",
+          "SpellRare",
+        },
+        exclude_groups = {}, -- You can exclude specific groups from becoming transparent
+      })
+    end,
+  },
 }
